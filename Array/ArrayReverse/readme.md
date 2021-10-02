@@ -39,5 +39,13 @@ public static void swap(int[] a, int idx1, int idx2){
 ```  
 값을 잠시 저장하는 buffer 변수에 idx1(첫번째 값)을 대입한다.  
 그리고, idx1이 저장되어 있던 인덱스에 idx2(두번째 값)을 대입한다. 이 단계에서 처음 idx1에 있던 값은 buffer에 들어가 있다.  
-그리고 a[idx2]에 buffer를 대입한다. buffer에는 idx1에 있던 값이 저장되어 있었으므로 결과적으로 a[idx1]과 a[idx2]의 값기 바뀌게 된다. 
+그리고 a[idx2]에 buffer를 대입한다. buffer에는 idx1에 있던 값이 저장되어 있었으므로 결과적으로 a[idx1]과 a[idx2]의 값이 바뀌게 된다.  
+#### (3) 배열을 역순으로 뒤집는 메소드 reverse 작성  
+```java
+public static void reverse(int[] a) {
+    for (int i=0; i<a.length/2; i++) {
+        swap(a, i, a.length - i - 1);
+        }
+```  
+배열의 0번 인덱스부터 올라가며 배열의 길이(n)를 2로 나눈 횟수만큼 swap 메소드를 반복한다.
 
