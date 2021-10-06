@@ -8,10 +8,10 @@ public class MyLinkedTest {
         list.addElement("A");
         list.addElement("B");
         list.addElement("C");
-        list.printAll();
+        list.printAll(); 
         list.insertElement(3, "D");
         list.printAll();
-        list.removeElement(1);
+        list.removeElement(0);
         list.printAll();
         
         list.insertElement(0, "A-1");

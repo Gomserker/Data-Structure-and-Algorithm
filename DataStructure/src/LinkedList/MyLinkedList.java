@@ -2,7 +2,7 @@ package LinkedList;
 
 public class MyLinkedList {
 
-    private MyListNode head;
+    private MyListNode head; //linked list 맨 앞
     int count;
     
     public MyLinkedList()
@@ -22,8 +22,9 @@ public class MyLinkedList {
         else{
             newNode = new MyListNode(data);
             MyListNode temp = head;
-            while(temp.next != null)  //맨 뒤로 가서  
-                temp = temp.next;
+            while(temp.next != null) {
+                temp = temp.next; //맨 뒤로 가서, 맨 마지막 head는 null이다. 끝이니까 없지 ㅇㅇ  
+            }
             temp.next = newNode;
         }
         count++;
@@ -34,6 +35,8 @@ public class MyLinkedList {
     {
         int i;
         MyListNode tempNode = head;
+        MyListNode preNode = null;
+        
         MyListNode newNode = new MyListNode(data);
         
         if(position < 0 || position > count ){
@@ -45,12 +48,10 @@ public class MyLinkedList {
             newNode.next = head;
             head = newNode;
         }
-        else{
-            MyListNode preNode = null;  
+        else{ 
             for(i=0; i<position; i++){
                 preNode = tempNode;
                 tempNode = tempNode.next;
-                
             }
             newNode.next = preNode.next;
             preNode.next = newNode;
@@ -63,6 +64,7 @@ public class MyLinkedList {
     {
         int i;
         MyListNode tempNode = head;
+        MyListNode preNode = null;
         
         if(position >= count ){
             System.out.println("삭제 할 위치 오류입니다. 현재 리스트의 개수는 " + count +"개 입니다.");
@@ -73,7 +75,6 @@ public class MyLinkedList {
             head = tempNode.next;
         }
         else{
-            MyListNode preNode = null;  
             for(i=0; i<position; i++){
                 preNode = tempNode;
                 tempNode = tempNode.next;
